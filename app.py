@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 from engine import generate,lifecycle,cohorts
 st.set_page_config(page_title="Customer Journey",layout="wide")
+st.caption("ANALYTICS INTELLIGENCE LAB | Independent portfolio project")
 st.title("Customer Journey | Lifecycle intelligence")
 st.caption("Synthetic events · inactivity is a churn proxy, not a confirmed cancellation")
 df=generate()
@@ -18,3 +19,7 @@ st.caption("M0 includes acquisition. Later months measure observed activity; fut
 st.dataframe(states)
 st.download_button("Export lifecycle",states.to_csv(index=False),"lifecycle.csv")
 st.download_button("Export cohorts",matrix.to_csv(),"cohorts.csv")
+
+
+st.divider()
+st.caption("Rodrigo Alcantara | Analytics Intelligence Lab | Synthetic demonstration")
