@@ -18,9 +18,17 @@ st.markdown("""<style>
 .lab-hero p {color:#cbd5e1;margin:0;}
 .lab-kicker {color:#7dd3fc;font-size:12px;font-weight:700;letter-spacing:1.8px;}
 </style>
-<section class="lab-hero"><div class="lab-kicker">ANALYTICS INTELLIGENCE LAB / 03 / V2.1</div><h1>Customer Journey Intelligence</h1><p>Lifecycle · Engagement · Retention</p></section>""", unsafe_allow_html=True)
+<section class="lab-hero"><div class="lab-kicker">ANALYTICS INTELLIGENCE LAB / 03 / V2.2</div><h1>Customer Journey Intelligence</h1><p>Lifecycle · Engagement · Retention</p></section>""", unsafe_allow_html=True)
 st.sidebar.header("Workspace")
 st.sidebar.caption("Configure your synthetic demonstration.")
+st.sidebar.markdown("### Product suite")
+st.sidebar.markdown("[01 · Data Quality](https://dgalkan-data-quality.streamlit.app)  \n[02 · Decision Intelligence](https://dgalkan-decision-intelligence.streamlit.app)  \n[03 · Customer Journey](https://dgalkan-customer-journey.streamlit.app)")
+st.sidebar.divider()
+st.sidebar.markdown("### Analysis controls")
+with st.expander("About this product · methodology"):
+    st.markdown("Explore engagement, inactivity and monthly activity cohorts.")
+    st.markdown("Lifecycle states use configurable inactivity thresholds. Cohorts measure observed monthly activity; churn is a proxy and the current month may be incomplete.")
+    st.markdown("[Technical portfolio](https://github.com/DgAlkan) · Synthetic data only.")
 st.caption("Synthetic events · inactivity is a churn proxy, not a confirmed cancellation")
 volume=st.sidebar.selectbox("Synthetic customers",[1500,3000,5000])
 @st.cache_data
@@ -34,6 +42,8 @@ states=lifecycle(df,cutoff,risk,churn)
 matrix=cohorts(df,cutoff)
 for c,(label,val) in zip(st.columns(3),[("Customers",len(states)),("At risk",states.state.eq("At risk").sum()),("Churn proxy",states.state.eq("Churn proxy").sum())]): c.metric(label,int(val))
 st.subheader("Lifecycle distribution")
+if len(states):
+    st.info(f"{states.state.isin(['At risk', 'Churn proxy']).mean():.1%} of observed customers are classified as at risk or churn proxy under the selected thresholds.")
 st.bar_chart(states.state.value_counts(), color="#2563EB")
 st.subheader("Inactivity distribution")
 st.bar_chart(pd.cut(states.idle_days,[-1,30,60,90,120,1000]).value_counts(sort=False).rename(index=str), color="#0F766E")
