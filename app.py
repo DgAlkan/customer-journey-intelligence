@@ -18,7 +18,7 @@ st.markdown("""<style>
 .lab-hero p {color:#cbd5e1;margin:0;}
 .lab-kicker {color:#7dd3fc;font-size:12px;font-weight:700;letter-spacing:1.8px;}
 </style>
-<section class="lab-hero"><div class="lab-kicker">ANALYTICS INTELLIGENCE LAB / 03 / V2.2</div><h1>Customer Journey Intelligence</h1><p>Lifecycle · Engagement · Retention</p></section>""", unsafe_allow_html=True)
+<section class="lab-hero"><div class="lab-kicker">ANALYTICS INTELLIGENCE LAB</div><h1>Customer Journey Intelligence</h1><p>Lifecycle · Engagement · Retention</p></section>""", unsafe_allow_html=True)
 st.sidebar.header("Workspace")
 st.sidebar.caption("Configure your synthetic demonstration.")
 st.sidebar.markdown("### Product suite")
