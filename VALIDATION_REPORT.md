@@ -2,7 +2,7 @@
 
 ## Evidence — 2026-11-26
 
-GitHub Actions workflow Tests #7 displayed a successful result in the repository owner's screenshot for commit [81bf596](https://github.com/DgAlkan/customer-journey-intelligence/commit/81bf5966c213eaa794b59c7cf7fbd47bb55d9112). The workflow executes pytest, including Python, DuckDB integration and Streamlit AppTest checks. The earlier AppTest relative-path failure was corrected using an absolute path derived from the test file.
+GitHub Actions workflow Tests #7 displayed a successful result in the repository [81bf596](https://github.com/DgAlkan/customer-journey-intelligence/commit/81bf5966c213eaa794b59c7cf7fbd47bb55d9112). The workflow executes pytest, including Python, DuckDB integration and Streamlit AppTest checks. The earlier AppTest relative-path failure was corrected using an absolute path derived from the test file.
 
 Evidence source: owner-provided screenshot of the Actions overview; detailed final test logs were not independently retrieved. This confirms the workflow result, not exhaustive coverage.
 
