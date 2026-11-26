@@ -1,8 +1,6 @@
-## v2.0 dashboard update
-
-[Live demo](https://dgalkan-customer-journey.streamlit.app) 
-
 # Customer Journey Intelligence
+
+[Live demo](https://dgalkan-customer-journey.streamlit.app)
 
 Independent portfolio project by Rodrigo Alcantara.
 
@@ -27,9 +25,5 @@ Run SQL with DuckDB from the repository root after generating the CSV. See [meth
 - tests/: automated checks
 - .github/workflows/: CI configuration
 
-No employer data or proprietary code. Synthetic demonstration only. No hosted deployment or production performance claims. Test execution must be verified before release.
+No employer data or proprietary code. Synthetic demonstration only. No production performance claims. Test execution must be verified before release.
 
-## Original introduction
-
-# customer-journey-intelligence
-A longitudinal analytics framework for customer lifecycle modeling, cohort analysis, angagement and retention.
