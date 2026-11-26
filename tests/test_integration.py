@@ -1,3 +1,4 @@
+from pathlib import Path
 import pandas as pd
 import duckdb
 from streamlit.testing.v1 import AppTest
@@ -22,6 +23,6 @@ def test_boundaries():
     assert lifecycle(x,"2025-05-01").state.iloc[0]=="Churn proxy"
 
 def test_app():
-    a=AppTest.from_file("app.py",default_timeout=60).run()
+    a=AppTest.from_file(str(Path(__file__).resolve().parents[1] / "app.py"),default_timeout=60).run()
     assert not a.exception
     assert len(a.metric)==3
