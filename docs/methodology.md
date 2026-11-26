@@ -1,0 +1,2 @@
+# Methodology
+Event grain: customer, date, event. Observation cutoff prevents future leakage. Cohort is first observed event month; M0 includes acquisition. Later months count unique active customers divided by cohort size, not survival. Future cells are blank, observed empty cells zero. Inactivity thresholds are configurable proxies, not predicted churn. Reactivation requires a gap between engagement events. Current month can be incomplete. SQL returns observed cells only.
