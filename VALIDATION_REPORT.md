@@ -6,10 +6,6 @@ GitHub Actions workflow Tests #7 displayed a successful result for commit [81bf5
 
 Evidence: Actions overview screenshot. Detailed logs and exhaustive coverage were not verified.
 
-## Remaining checks
-
-Comprehensive interaction testing, performance benchmarks and latest CI verification remain pending. Synthetic data only.
-
 ## Reproduce
 
 ```bash
